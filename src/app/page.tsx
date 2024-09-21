@@ -1,101 +1,132 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { FaSun, FaMusic } from 'react-icons/fa'
+import { GiSunflower, GiFlowerPot } from 'react-icons/gi'
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+export default function Page() {
+    return (
+        <div className="min-h-screen bg-[#F7F7F7] flex flex-col items-center justify-center p-8 overflow-hidden relative">
+            {/* Título */}
+            <motion.h1
+                className="text-4xl md:text-6xl font-bold text-[#FFD700] mb-8 text-center"
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+            >
+                ¡Feliz Primavera! 🌻
+            </motion.h1>
+
+            {/* Flores animadas */}
+            <motion.div
+                className="flex flex-wrap justify-center gap-8 mb-12"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+            >
+                {[...Array(5)].map((_, i) => (
+                    <motion.div
+                        key={i}
+                        className="w-24 h-24 bg-[#FFD700] rounded-full flex items-center justify-center shadow-lg"
+                        whileHover={{ scale: 1.2, rotate: 360 }}
+                        transition={{ duration: 0.4 }}
+                    >
+                        <GiSunflower className="text-4xl text-[#5C4033]" />{' '}
+                        {/* Marrón oscuro para el centro del girasol */}
+                    </motion.div>
+                ))}
+            </motion.div>
+
+            {/* Sección de información */}
+            <motion.div
+                className="bg-white rounded-lg p-8 max-w-2xl w-full shadow-2xl"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+            >
+                <h2 className="text-3xl font-semibold text-[#FFD700] mb-4">
+                    Floricienta y la Magia de la Primavera
+                </h2>
+                <p className="text-gray-600 mb-4">
+                    La primavera trae consigo la magia de Floricienta, con sus
+                    canciones alegres y su espíritu lleno de color. Como los
+                    girasoles que siguen al sol, nuestros corazones siguen la
+                    melodía de la vida y la alegría. Gracias por estar a mi
+                    lado, por ser mi sol y mi primavera.
+                    <br />
+                    ¡Vamos a disfrutar de la música y a cultivar flores juntxs!
+                    <br />
+                    ¡Feliz Primavera!
+                    <br />
+                    🌻🌻🌻
+                </p>
+                <div className="flex justify-center gap-4">
+                    <motion.button
+                        className="bg-[#FFD700] text-white px-6 py-3 rounded-full flex items-center gap-2 shadow-lg hover:bg-yellow-500 transition-all"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <Link
+                            href="/playmusic"
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 10,
+                            }}
+                        >
+                            <FaMusic /> Escuchar Canción
+                        </Link>
+                    </motion.button>
+                    <motion.button
+                        className="bg-[#A8D5BA] text-white px-6 py-3 rounded-full flex items-center gap-2 shadow-lg hover:bg-green-600 transition-all"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <Link
+                            href="/virtualgarden"
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 10,
+                            }}
+                        >
+                            <GiFlowerPot /> Cultivar Flores
+                        </Link>
+                    </motion.button>
+                </div>
+            </motion.div>
+
+            <motion.div
+                className="absolute top-4 right-4 text-6xl text-[#FFD700]"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+            >
+                <FaSun />
+            </motion.div>
+
+            {[...Array(25)].map((_, i) => (
+                <motion.div
+                    key={i}
+                    className="absolute text-[#B0B0B0]"
+                    style={{
+                        top: `${Math.random() * 100}%`,
+                        left: `${Math.random() * 100}%`,
+                        fontSize: `${Math.random() * 25 + 10}px`,
+                    }}
+                    animate={{
+                        y: [0, -20, 0],
+                        opacity: [0, 1, 0],
+                    }}
+                    transition={{
+                        duration: Math.random() * 4 + 2,
+                        repeat: Infinity,
+                        delay: Math.random() * 2,
+                    }}
+                >
+                    ✿
+                </motion.div>
+            ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    )
 }
