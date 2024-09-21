@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌻 Virtual Garden - Girasoles Interactivos 🌻
 
-## Getting Started
+¡Bienvenidos a **Virtual Garden**! Este es un proyecto de jardín virtual donde los usuarios pueden plantar y regar girasoles animados en un entorno 3D interactivo. Cada vez que riegas un girasol, este crece.
 
-First, run the development server:
+## 🚀 Descripción
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Este proyecto utiliza tecnologías modernas como **React**, **Three.js** y **@react-three/fiber** para crear un entorno 3D interactivo donde los usuarios pueden plantar y cuidar girasoles virtuales. La experiencia es simple, intuitiva, y está llena de animaciones suaves para que los usuarios disfruten del proceso de ver crecer sus girasoles.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El proyecto está especialmente diseñado para aquellos que aman las plantas, la naturaleza, y las animaciones interactivas.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 Características del Proyecto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Interfaz 3D**: Utilizamos **Three.js** y **@react-three/fiber** para renderizar un hermoso jardín interactivo.
+- **Girasoles Dinámicos**: Los girasoles crecen cada vez que los riegas, y puedes plantar hasta 7.
+- **Animaciones Suaves**: Cada girasol reacciona al tiempo, con rotaciones suaves y movimientos realistas.
+- **Interactividad**: Haz clic en el suelo para plantar girasoles y riega cada uno para verlo crecer.
 
-## Learn More
+## 🛠 Tecnologías Utilizadas
 
-To learn more about Next.js, take a look at the following resources:
+- **React**: Biblioteca de JavaScript para crear interfaces de usuario.
+- **Next.js**: Framework de React para una experiencia de desarrollo optimizada.
+- **Three.js**: Biblioteca de JavaScript para gráficos 3D en la web.
+- **@react-three/fiber**: Un adaptador de React para usar Three.js de manera declarativa.
+- **@react-three/drei**: Utilidades adicionales para facilitar el uso de Three.js con React.
+- **Framer Motion**: Biblioteca para crear animaciones suaves y declarativas en React.
+- **TypeScript**: Lenguaje de programación tipado para evitar errores y mejorar el desarrollo.
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📸 Capturas de Pantalla
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+¡Aquí puedes ver una vista previa de lo que ofrece **Virtual Garden**!
 
-## Deploy on Vercel
+![Vista previa del jardín virtual](./public/images/image.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Vista previa del jardín virtual](./public/images/image2.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Vista previa del jardín virtual](./public/images/image3.png)
+
+## 📝 Licencia
+Este proyecto está bajo la Licencia MIT - consulta el archivo LICENSE para más detalles.
+
+## 🌻 Agradecimientos
+
+Gracias por visitar este jardín virtual interactivo. Espero que lo disfrutes tanto como yo disfrute creándolo. ¡Recuerda que siempre hay un girasol esperando florecer para ti! 🌞
